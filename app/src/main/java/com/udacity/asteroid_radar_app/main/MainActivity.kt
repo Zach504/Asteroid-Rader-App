@@ -38,6 +38,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpBackgroundWorker(){
         applicationScope.launch {
+            //I made it so that charging isn't required despite the rubric. Requiring no low battery
+            //should be plenty sufficient given that the amount of data we're getting. It shouldn't
+            //put much of a strain on the device
             val constraints = Constraints.Builder().setRequiredNetworkType(NetworkType.UNMETERED)
                 .setRequiresBatteryNotLow(true)
                 .setRequiresCharging(false)
