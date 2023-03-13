@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="asteroid"
+            type="com.udacity.asteroid_radar_app.data.Asteroid" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:text="@{asteroid.codename}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="(2015 XK351)"
+            style="@style/label_style" />
+        <TextView
+            android:id="@+id/closeApproachDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:text="@{asteroid.closeApproachDate}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="2020-02-08"
+            style="@style/body_style" />
+        <ImageView
+            android:id="@+id/statusImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:asteroidHazardousStatusIcon="@{asteroid.potentiallyHazardous}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/ic_status_potentially_hazardous"/>
+        <TextView
+            android:id="@+id/relativeVelocity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/body_text_size"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            app:double="@{asteroid.relativeVelocity}"
+            app:unit="@{@string/kms}"
+            app:layout_constraintEnd_toStartOf="@id/statusImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="15.234567 km/s"
+            style="@style/body_style"/>
+        <TextView
+            android:id="@+id/distanceFromEarth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            app:double="@{asteroid.distanceFromEarth}"
+            app:unit="@{@string/au}"
+            app:layout_constraintEnd_toStartOf="@id/statusImage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="19.900000 au"
+            style="@style/body_style"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

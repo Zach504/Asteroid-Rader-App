@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Asteroid Radar</string>
+    <string name="app_name">Radar de Asteroides</string>
     <string name="kms">km/s</string>
     <string name="km">km</string>
     <string name="au">au</string>
-    <string name="image_of_the_day">Image of the Day</string>
+    <string name="image_of_the_day">Imagen del día</string>
     <string name="close_approach_date">Close Approach Date</string>
     <string name="absolute_magnitude">Absolute Magnitude</string>
     <string name="estimated_diameter">Estimated Diameter</string>
