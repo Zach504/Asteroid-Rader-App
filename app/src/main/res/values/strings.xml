@@ -3,17 +3,22 @@
     <string name="kms">km/s</string>
     <string name="km">km</string>
     <string name="au">au</string>
-    <string name="image_of_the_day">Image of the Day</string>
     <string name="close_approach_date">Close Approach Date</string>
     <string name="absolute_magnitude">Absolute Magnitude</string>
     <string name="estimated_diameter">Estimated Diameter</string>
     <string name="relative_velocity">Relative Velocity</string>
     <string name="distance_from_earth">Distance from Earth</string>
     <string name="hazardous_status_image">Hazardous Status Image</string>
-    <string name="astronomica_unit_explanation">The astronomical unit (au) is a unit of length, roughly the distance from Earth to the Sun and equal to about 150 million kilometres (93 million miles)</string>
-    <string name="unfavorite_asteroid">Unfavorite Asteroid</string>
-    <string name="favorite_asteroid">Favorite Asteroid</string>
+    <string name="hazardous_status_icon">Hazardous Status Icon</string>
+    <string name="astronomical_unit_explanation">The astronomical unit (au) is a unit of length, roughly the distance from Earth to the Sun and equal to about 150 million kilometres (93 million miles)</string>
     <string name="this_weeks_asteroids">This Weeks Asteroids</string>
     <string name="today_s_asteroids">Today\'s Asteroids</string>
     <string name="all_asteroids">All Asteroids</string>
+    <string name="near_earth_asteroid_list">Near Earth Asteroid List</string>
+    <string name="nasa_s_picture_of_the_day_not_rendered_yet">NASA\'s picture of the day, not rendered yet.</string>
+    <string name="nasa_s_picture_of_the_day">NASA\'s picture of the day</string>
+    <string name="nasa_s_picture_of_the_day_with_title">NASA\'s picture of the day: %s</string>
+    <string name="explanation_for_au_unit_of_measure">Explanation for \'au\' unit of measure</string>
+    <string name="hazardous_status">Potentially Hazardous Status</string>
+    <string name="safe_status">Safe Status</string>
 </resources>

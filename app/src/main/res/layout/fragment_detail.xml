@@ -40,6 +40,7 @@
                     android:text="@string/close_approach_date"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
+                    android:labelFor="@id/closeApproachText"
                     app:layout_constraintStart_toStartOf="@id/detailLayout"
                     app:layout_constraintTop_toTopOf="@id/detailLayout"
                     style="@style/label_style" />
@@ -62,6 +63,7 @@
                     android:text="@string/absolute_magnitude"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
+                    android:labelFor="@id/magnitudeText"
                     app:layout_constraintStart_toStartOf="@id/detailLayout"
                     app:layout_constraintTop_toBottomOf="@id/closeApproachText"
                     style="@style/label_style" />
@@ -84,6 +86,7 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/small_padding"
                     android:layout_marginEnd="@dimen/medium_margin"
+                    android:contentDescription="@string/explanation_for_au_unit_of_measure"
                     app:srcCompat="@drawable/ic_help_circle"
                     app:layout_constraintEnd_toEndOf="@id/detailLayout"
                     app:layout_constraintTop_toTopOf="@+id/magnitudeLabel"/>
@@ -95,6 +98,7 @@
                     android:text="@string/estimated_diameter"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
+                    android:labelFor="@id/diameterText"
                     app:layout_constraintStart_toStartOf="@id/detailLayout"
                     app:layout_constraintTop_toBottomOf="@id/magnitudeText"
                     style="@style/label_style" />
@@ -118,6 +122,7 @@
                     android:text="@string/relative_velocity"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
+                    android:labelFor="@id/velocityText"
                     app:layout_constraintStart_toStartOf="@id/detailLayout"
                     app:layout_constraintTop_toBottomOf="@id/diameterText"
                     style="@style/label_style" />
@@ -141,6 +146,7 @@
                     android:text="@string/distance_from_earth"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
+                    android:labelFor="@id/distanceText"
                     app:layout_constraintStart_toStartOf="@id/detailLayout"
                     app:layout_constraintTop_toBottomOf="@id/velocityText"
                     style="@style/label_style" />

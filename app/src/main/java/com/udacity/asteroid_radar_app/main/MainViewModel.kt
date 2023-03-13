@@ -60,12 +60,8 @@ class MainViewModel(val database: AsteroidDatabaseDao, application: Application)
     }
 
     init {
-        //Clean Up Old Data
-        cleanAsteroids()
         //Picture of the day coroutine
         getPictureOfDay()
-        //Asteroid data coroutine
-        //getAsteroids()
     }
 
     //Util Functions
@@ -87,15 +83,6 @@ class MainViewModel(val database: AsteroidDatabaseDao, application: Application)
         return week
     }
 
-    //Remove asteroids from before today
-    private fun cleanAsteroids(){
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                database.cleanAsteroids(getDay())
-            }
-        }
-    }
-
     //Network Calls
     private fun getPictureOfDay(){
         viewModelScope.launch {
@@ -106,46 +93,4 @@ class MainViewModel(val database: AsteroidDatabaseDao, application: Application)
             }
         }
     }
-    //This function is no longer needed as this work is done in a background worker
-/*    private fun getAsteroids(){
-        viewModelScope.launch {
-            val calendar = Calendar.getInstance()
-            val currentTime = calendar.time
-            val startDate = dateFormat.format(currentTime).toString()
-            calendar.add(Calendar.DAY_OF_YEAR, 7)
-            val endTime = calendar.time
-            val endDate = dateFormat.format(endTime).toString()
-            //I am open to suggestions on a cleaner way to do this
-            //Get the next seven days of NEOs
-            try {
-                val asteroids = NASAAsteroidApi.parseAsteroidsJsonResult(
-                    NASAAsteroidApi.retrofitService.getAsteroids(
-                        startDate,
-                        endDate
-                    )
-                )
-                database.insert(asteroids)
-            } catch (e: Exception) {
-                //TODO: Handle Failure
-            }
-            //Get an additional seven days of NEOs
-            calendar.add(Calendar.DAY_OF_YEAR, 1)
-            val futureStartTime = calendar.time
-            val futureStartDate = dateFormat.format(futureStartTime).toString()
-            calendar.add(Calendar.DAY_OF_YEAR, 7)
-            val futureEndTime = calendar.time
-            val futureEndDate = dateFormat.format(futureEndTime).toString()
-            try {
-                val asteroids = NASAAsteroidApi.parseAsteroidsJsonResult(
-                    NASAAsteroidApi.retrofitService.getAsteroids(
-                        futureStartDate,
-                        futureEndDate
-                    )
-                )
-                database.insert(asteroids)
-            } catch (e: Exception) {
-                //TODO: Handle Failure
-            }
-        }
-    }*/
 }

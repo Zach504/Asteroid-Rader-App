@@ -32,7 +32,7 @@ class DetailFragment : Fragment() {
 
         //Help button click listener and alert dialog creation
         binding.helpButton.setOnClickListener{
-            AlertDialog.Builder(requireActivity()).setMessage(getString(R.string.astronomica_unit_explanation)).setPositiveButton(android.R.string.ok, null).create().show()
+            AlertDialog.Builder(requireActivity()).setMessage(getString(R.string.astronomical_unit_explanation)).setPositiveButton(android.R.string.ok, null).create().show()
         }
 
         return binding.root

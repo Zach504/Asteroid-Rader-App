@@ -65,6 +65,7 @@ class ListFragment : Fragment() {
             if(null != it){
                 val imageUri = it.url.toUri()
                 binding.imageOfTheDayText.text = it.title
+                binding.imageOfTheDayImage.contentDescription = getString(R.string.nasa_s_picture_of_the_day_with_title,it.title)
                 Glide.with(binding.imageOfTheDayImage.context).load(imageUri).apply(RequestOptions().placeholder(R.drawable.placeholder_picture_of_day)).into(binding.imageOfTheDayImage)
             }
         })

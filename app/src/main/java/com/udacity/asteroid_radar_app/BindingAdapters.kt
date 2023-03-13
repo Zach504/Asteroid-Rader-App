@@ -1,5 +1,6 @@
 package com.udacity.asteroid_radar_app
 
+import android.content.res.Resources
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
@@ -21,9 +22,11 @@ fun RecyclerView.listData(data: List<Asteroid>?){
 fun ImageView.asteroidHazardousStatusIcon(hazardous: Boolean) {
     if(hazardous) {
         this.setImageResource(R.drawable.ic_status_potentially_hazardous)
+        this.contentDescription = this.context.getString(R.string.hazardous_status)
     }
     else{
         this.setImageResource(R.drawable.ic_status_normal)
+        this.contentDescription = this.context.getString(R.string.safe_status)
     }
 }
 
@@ -31,9 +34,11 @@ fun ImageView.asteroidHazardousStatusIcon(hazardous: Boolean) {
 fun ImageView.asteroidHazardousStatusImage(hazardous: Boolean) {
     if(hazardous) {
         this.setImageResource(R.drawable.asteroid_hazardous)
+        this.contentDescription = this.context.getString(R.string.hazardous_status)
     }
     else{
         this.setImageResource(R.drawable.asteroid_safe)
+        this.contentDescription = this.context.getString(R.string.safe_status)
     }
 }
 
